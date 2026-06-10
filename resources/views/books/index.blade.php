@@ -8,7 +8,7 @@
     <p>Temukan Ribuan buku menarik. Baca, Plejari, dan jadika membaca sebagai kebiasaanmu!</p>
     <form action="{{ route('books.index') }}" class="hero-search" method="GET"">
         <input type="text" name="search" value="{{ $search }}" placeholder="Cari judul atau pengarang...">
-        <button type="submit"></button>
+        <button type="submit">Cari</button>
     </form>
 </div>
 
@@ -27,7 +27,7 @@
         <div class="book-card">
             <a href="{{ route('books.show', $book) }}"class="book-link">
                 @if ($book->cover_image)
-                    <img src=" {{ storage::url($book->cover_image) }}" alt="{{ $book->title }}" class="book-cover">
+                    <img src=" {{ Storage::url($book->cover_image) }}" alt="{{ $book->title }}" class="book-cover">
                 @else
                 <div class="book-cover-placeholder">
                     📖 <span>No Cover</span>

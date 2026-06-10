@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function (){
    Route::get('/my-books/create', [MyBookController::class, 'create'])->name('my-books.create');
    Route::post('/my-books/store', [MyBookController::class, 'store'])->name('my-books.store');
    Route::get('my-books/{myBook}/edit',[MyBookController::class, 'edit'])->name('my-books.edit');
-   Route::put('my-books/(myBook)', [MyBookController::class, 'update'])->name('my-books.update');
-   Route::delete('my-books/(myBook)',[MyBookController::class, 'destroy'])->name('my-books.destroy');
+   Route::put('my-books/{myBook}', [MyBookController::class, 'update'])->name('my-books.update');
+   Route::delete('my-books/{myBook}',[MyBookController::class, 'destroy'])->name('my-books.destroy');
 });
 

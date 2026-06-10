@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title', $book->title)
 
@@ -10,7 +10,7 @@
     <div class="book-detail">
         <div class="">
             @if ($book->cover_image)
-                <img src=" {{ storage::url($book->cover_image) }}" alt="{{ $book->title }}" class="detail-cover">
+                <img src=" {{ Storage::url($book->cover_image) }}" alt="{{ $book->title }}" class="detail-cover">
             @else
                 <div class="deatil-cover-placeholder">
                     📖
@@ -20,7 +20,7 @@
 
         <div class="detail-info">
             <h1>{{$book->title}}</h1>
-            <div class="detail-author">Oleh {{$book->}}</div>
+            <div class="detail-author">Oleh {{$book->author}}</div>
 
             @if ($book->description)
                 <div class="detail-desc"> {{$book->description}}</div>

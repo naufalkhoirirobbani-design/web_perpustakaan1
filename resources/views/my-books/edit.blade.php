@@ -9,7 +9,7 @@
         </div>
 
         <div class="form-card form-card-wide">
-            <h2 class="form-title">➕ Tambah Buku Baru</h2>
+            <h2 class="form-title">➕ Edit Buku</h2>
 
             @if ($errors->any())
                 <div class="alert alert-error">⚠️ {{ $errors->first() }}</div>
@@ -20,7 +20,7 @@
 
                 <div class="form-group">
                     <label for="title">Judul Buku</label>
-                    <input type="text" name="title" id="title" value="{{ old('title'), $book->title }}"
+                    <input type="text" name="title" id="title" value="{{ old('title', $book->title )}}"
                         placeholder="Masukkan Judul Buku" required>
                     @error('title')
                         <div class="form-error">{{ $message }}</div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="author">Pengarang</label>
-                    <input type="text" name="author" id="author" value="{{ old('author'), $book->author}}"
+                    <input type="text" name="author" id="author" value="{{ old('author', $book->author)}}"
                         placeholder="Masukkan Nama Pengarang" required>
                     @error('author')
                         <div class="form-error">{{ $message }}</div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Deskripsi</label>
-                    <textarea name="description" id="description" placeholder=""> {{ old('description'), $book->description }} </textarea>
+                    <textarea name="description" id="description" placeholder=""> {{ old('description', $book->description )}} </textarea>
                     @error('description')
                         <div class="form-error">{{ $message }}</div>
                     @enderror
@@ -45,7 +45,7 @@
                     <label for="cover_image">Cover Buku Saat ini</label>
                     @if ($book->cover_image)
                     <div class="cover-preview=wrapper">
-                        <img src="{{ storage::url($book->cover_image)}}" alt="cover" class="cover-preview">
+                        <img src="{{ Storage::url($book->cover_image)}}" alt="cover" class="cover-preview">
                     </div>
                     @else
                         <div class="cover-empty">Tidak ada Cover saat ini</div>
